@@ -1,0 +1,169 @@
+/* Dashboard layout: sidebar + main */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-dashboard-layout {
+  flex-direction: row;
+  background: #f1f5f9;
+}
+
+.app-main-wrap {
+  flex: 1;
+  min-width: 0;
+  padding: 24px 32px 32px;
+  overflow-x: hidden;
+}
+
+/* Dashboard view */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.dashboard-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.btn-add-employee {
+  padding: 10px 20px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: inherit;
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-add-employee:hover {
+  background: #1e293b;
+}
+
+.dashboard-content {
+  max-width: 1200px;
+}
+
+/* Employees / Salary views (original layout) */
+.app-main {
+  max-width: 1400px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.table-column {
+  min-width: 0;
+}
+
+.salary-summary-section {
+  margin-top: 0;
+}
+
+/* Alerts */
+.alert {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.alert-error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+}
+
+.alert-success {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #059669;
+}
+
+.alert-icon {
+  margin-right: 12px;
+  font-size: 1.25rem;
+}
+
+.alert-message {
+  flex: 1;
+}
+
+.alert-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.7;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.alert-close:hover {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-column {
+    order: 1;
+  }
+
+  .table-column {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-main-wrap {
+    padding: 16px 20px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-add-employee {
+    width: 100%;
+  }
+}
